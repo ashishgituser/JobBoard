@@ -11,4 +11,19 @@ public class InitController {
 	public String homePage(ModelMap mode) {
 		return "home";
 	}
+	
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String loginPage(ModelMap mode) {
+		return "login";
+	}
+	
+	@RequestMapping(value="/dashboard", method=RequestMethod.GET)
+	public String dashBoardPage(ModelMap mode) {
+		return "dashboard";
+	}
+	
+	@RequestMapping(value="/Access_Denied", method=RequestMethod.GET)
+	public String accessDeniedPage(ModelMap mode) {
+		return "accessDenied";
+	}
 }
