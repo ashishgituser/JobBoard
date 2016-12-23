@@ -13,7 +13,7 @@
 <c:url var="loginUrl" value="/login" />
 <form name="login" method="post" action="${loginUrl}">
 <label>Username : </label>
-<input type="text" name="username" />
+<input type="text" name="ssoId" />
 <br />
 <label>Password : </label>
 <input type="password" name="password" />
