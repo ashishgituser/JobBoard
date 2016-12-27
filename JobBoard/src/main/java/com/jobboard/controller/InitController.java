@@ -1,5 +1,6 @@
 package com.jobboard.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +26,11 @@ public class InitController {
 	@RequestMapping(value="/Access_Denied", method=RequestMethod.GET)
 	public String accessDeniedPage(ModelMap mode) {
 		return "accessDenied";
+	}
+	
+	@PreAuthorize("hasRole('ADMIN')")
+	@RequestMapping(value="/admin/dashboard", method=RequestMethod.GET)
+	public String adminDashBoardPage(ModelMap mode) {
+		return "admin/dashboard";
 	}
 }

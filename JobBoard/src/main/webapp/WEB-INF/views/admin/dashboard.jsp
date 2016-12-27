@@ -13,8 +13,8 @@
 
 	<div class="container">
 
-	    <div ng-include="'<c:url value='/static/templates/header/header.html' />'"></div>    
-	
+	    
+	    welcome to admin dashboard
 		<div ng-view=""></div>
 		
 		<footer class="footer">

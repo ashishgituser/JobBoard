@@ -1,31 +1,56 @@
 jbApp.constant('USER_ROLES', {
 	all : '*',
 	admin : 'ADMIN',
-	user : 'USER'
+	jobseeker : 'JOB_SEEKER',
+	employer : 'EMPLOYER'
 });
 
 jbApp.config(function($routeProvider,USER_ROLES) {
 
-	$routeProvider.when("/", {
+    //Application Home	
+	$routeProvider
+	.when("/", {
 		templateUrl : "/JobBoard/static/templates/home.html",
 		access : {
 			loginRequired : false,
 			authorizedRoles : [ USER_ROLES.all ]
-		}
-	}).when("/admin/dashboard", {
-		templateUrl : "/JobBoard/static/templates/dashboard.html",
+		}	
+	})
+	//Administrator Routes
+	.when("/adm/dashboard", {
+		templateUrl : "/JobBoard/static/templates/admin/dashboard.html",
 		access : {
 			loginRequired : true,
 			authorizedRoles : [ USER_ROLES.admin ]
 		}
-	}).when("/login", {
+	})
+	//JobSeeker Routes
+	.when("/jbs/dashboard", {
+		templateUrl : "/JobBoard/static/templates/jobseeker/dashboard.html",
+		access : {
+			loginRequired : true,
+			authorizedRoles : [ USER_ROLES.jobseeker ]
+		}
+	})
+	//Employer Routes
+	.when("/em/dashboard", {
+		templateUrl : "/JobBoard/static/templates/employer/dashboard.html",
+		access : {
+			loginRequired : true,
+			authorizedRoles : [ USER_ROLES.employer ]
+		}
+	})
+	//Login Route
+	.when("/login", {
 		templateUrl : "/JobBoard/static/templates/login.html",
 		controller : "LoginController",
 		access : {
 			loginRequired : false,
 			authorizedRoles : [ USER_ROLES.all ]
-		}
-	}).otherwise({
+		}		
+	})
+	//Unknown or Unauthorized URL handler
+	.otherwise({
 		redirectTo : '/error/404',
 		access : {
 			loginRequired : false,
@@ -35,7 +60,7 @@ jbApp.config(function($routeProvider,USER_ROLES) {
 });
 
 jbApp
-		.run(function($rootScope, $location, $http, AuthSharedService, Session,
+		.run(function($window,$rootScope, $location, $http, AuthSharedService, Session,
 				USER_ROLES, $q, $timeout) {
 			// Call when the 403 response is returned by the server
 			$rootScope.$on('event:auth-forbidden', function(rejection) {
@@ -72,8 +97,19 @@ jbApp
 							'event:auth-loginConfirmed',
 							function(event, data) {
 								$rootScope.loadingAccount = false;
-								var nextLocation = ($rootScope.requestedUrl ? $rootScope.requestedUrl
-										: "/admin/dashboard");
+								
+								var role = data.userProfiles[0].type;
+								var location = null;
+								
+								if(role == USER_ROLES.admin) {
+									location = "http://localhost:4444/JobBoard/admin/dashboard";
+								} else if(role == USER_ROLES.jobseeker) {
+									location = "/jbs/dashboard";
+								} else if(role == USER_ROLES.employer) {
+									location = "/em/dashboard";
+								}
+								
+								var nextLocation = ($rootScope.requestedUrl ? $rootScope.requestedUrl : location);
 								var delay = ($location.path() === "/loading" ? 1500
 										: 0);
 
@@ -81,7 +117,9 @@ jbApp
 									Session.create(data);
 									$rootScope.account = Session;
 									$rootScope.authenticated = true;
-									$location.path(nextLocation).replace();
+									//$location.path(nextLocation).replace();
+									$window.location = "http://localhost:4444/JobBoard/admin/dashboard";
+									$window.location.reload();
 								}, delay);
 
 							});
