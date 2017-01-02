@@ -19,6 +19,7 @@ jbApp.config(function($routeProvider,USER_ROLES) {
 	//Administrator Routes
 	.when("/adm/dashboard", {
 		templateUrl : "/JobBoard/static/templates/admin/dashboard.html",
+		controller : "dashboardController",
 		access : {
 			loginRequired : true,
 			authorizedRoles : [ USER_ROLES.admin ]
@@ -102,7 +103,7 @@ jbApp
 								var location = null;
 								
 								if(role == USER_ROLES.admin) {
-									location = "http://localhost:4444/JobBoard/admin/dashboard";
+									location = "/adm/dashboard";
 								} else if(role == USER_ROLES.jobseeker) {
 									location = "/jbs/dashboard";
 								} else if(role == USER_ROLES.employer) {
@@ -117,9 +118,7 @@ jbApp
 									Session.create(data);
 									$rootScope.account = Session;
 									$rootScope.authenticated = true;
-									//$location.path(nextLocation).replace();
-									$window.location = "http://localhost:4444/JobBoard/admin/dashboard";
-									$window.location.reload();
+									$location.path(nextLocation).replace();
 								}, delay);
 
 							});

@@ -27,8 +27,8 @@ jbApp.service('AuthSharedService', function($window, $rootScope, $http,
 		login : function(ssoId, password) {
 			var config = {
 				params : {
-					ssoId : "ashish",
-					password : "ashish"
+					ssoId : ssoId,
+					password : password
 				},
 				ignoreAuthModule : 'ignoreAuthModule'
 			};

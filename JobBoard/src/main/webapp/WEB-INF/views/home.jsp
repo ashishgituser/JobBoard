@@ -4,39 +4,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="<c:url value='/static/lib/bootstrap/css/bootstrap.min.css' />" rel="stylesheet"></link>
-<link href="<c:url value='/static/css/main.css' />" rel="stylesheet"></link>
-<title>Login</title>
+     <base href="/">
+     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+     <link href="<c:url value='/static/lib/bootstrap/css/bootstrap.min.css' />" rel="stylesheet"></link>
+     <link href="<c:url value='/static/css/main.css' />" rel="stylesheet"></link>
+     <title>Login</title>
 </head>
-<body ng-app="jbApp">
+<body>
 
 	<div class="container">
-
-	    <div ng-include="'<c:url value='/static/templates/header/header.html' />'"></div>    
-	
-		<div ng-view=""></div>
-		
-		<footer class="footer">
-           <p>&copy; Company 2014</p>
-      </footer>
+		<div ui-view></div>
 	</div>
-	
-<!-- Library -->
-<script type="text/javascript" src="<c:url value='/static/lib/jquery/jquery-3.1.1.min.js' />" ></script>
-<script type="text/javascript" src="<c:url value='/static/lib/angular/angular.min.js' />" ></script>
-<script type="text/javascript" src="<c:url value='/static/lib/angular/angular-route.js' />" ></script>
-<script type="text/javascript" src="<c:url value='/static/lib/angular/angular-resource.js' />" ></script>
-<script type="text/javascript" src="<c:url value='/static/lib/angular/http-auth-interceptor.js' />" ></script>
 
-<!-- Application Config -->
-<script type="text/javascript" src="<c:url value='/static/js/app.js' />" ></script>
-<script type="text/javascript" src="<c:url value='/static/js/config/app-config.js' />" ></script>
-
-<!-- Services -->
-<script type="text/javascript" src="<c:url value='/static/js/service/login-service.js' />" ></script>
-
-<!-- Controllers -->
-<script type="text/javascript" src="<c:url value='/static/js/controller/login-controller.js' />" ></script>
+	<script data-main="<c:url value='/static/app/main' />"
+		src="<c:url value='/static/lib/requirejs/require.js' />"></script>
 </body>
 </html>
