@@ -11,8 +11,8 @@ define(['angular','jQuery','angular-resource','angular-ui-router'], function(ang
 	   
 	   .config(function ($provide, $urlRouterProvider, $locationProvider, $httpProvider) {
                 $httpProvider.defaults.withCredentials = true;
-                $locationProvider.html5Mode(false);
-                $urlRouterProvider.otherwise('/');
+                $locationProvider.html5Mode(true);
+                //$urlRouterProvider.otherwise('/');
        });
 	   
 	   return app;

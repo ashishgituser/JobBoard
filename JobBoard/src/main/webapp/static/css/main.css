@@ -71,10 +71,8 @@ body {
 }
 
 /* Customize container */
-@media (min-width: 48em) {
-  .container {
-    max-width: 90rem;
-  }
+.container {
+	width: 70%;
 }
 .container-narrow > hr {
   margin: 2rem 0;
@@ -119,4 +117,82 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/* Employer desing */
+
+/* common layout */
+.top-header {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	height: auto;
+	background-color: #00BA6D;
+}
+
+.nav-container {
+	width: 100%;
+	border-bottom: 1px solid #d6d6d6;
+}
+
+.sidebar {
+	border-right: 1px solid #dedede;
+}
+
+.col-sm-2 {
+	padding: 0px;
+	margin: 0px;
+}
+
+/* navigation */
+.nav {
+	list-style: disc;
+}
+
+.nav li {
+	float: left;
+    min-width: 90px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+    border-left: 1px solid #d9d9d9;    
+}
+
+.nav li a {
+	display: block;
+    height: 100%;
+    padding: 0 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #b2afaa;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+.nav li .active {
+	border-bottom: 3px solid #ff7f74;
+    color: #383838;
+}
+
+/* header */
+.employer-logo {
+	text-align: center;
+}
+
+.employer-info-panel {
+	
+}
+
+.employer-name {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #fff;
+}
+
+.line-break {
+	width: 100%;
+	border-bottom: 1px solid #dedede;
+	line-height: 0.1em;
 }

@@ -8,7 +8,8 @@ require.config({
 		'angular' : '/JobBoard/static/lib/angular/angular',
 		'angular-resource' : '/JobBoard/static/lib/angular/angular-resource',
 		'angular-ui-router' : '/JobBoard/static/lib/angular/angular-ui-router',
-		'domReady' : '/JobBoard/static/lib/domready/domready'
+		'domReady' : '/JobBoard/static/lib/domready/domready',
+		'bootstrap' : '/JobBoard/static/lib/bootstrap/js/bootstrap'
 	},
 	
 	//modules and dependencies
@@ -31,12 +32,18 @@ require.config({
         'domReady': {
         	'exports': 'domReady',
         	deps: ['angular']
+        },
+        'bootstrap': {
+        	'exports': 'bootstrap',
+        	deps: ['jQuery']
         }
 	},
 	
 	//kick start application
 	deps: [
 		'./JobBoard/Homepage/jobBoardHomepage',
+		'./JobBoard/Users/jobBoardUsers',
+		'./JobBoard/Employer/jobBoardEmployer',
 		'./bootstrap'
 	],
 	
