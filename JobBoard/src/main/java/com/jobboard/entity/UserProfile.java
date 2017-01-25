@@ -1,4 +1,4 @@
-package com.jobboard.model;
+package com.jobboard.entity;
  
 import javax.persistence.Column;
 import javax.persistence.Entity;

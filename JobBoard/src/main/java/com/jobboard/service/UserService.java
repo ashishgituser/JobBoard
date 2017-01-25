@@ -1,6 +1,6 @@
 package com.jobboard.service;
 
-import com.jobboard.model.User;
+import com.jobboard.entity.User;
  
 public interface UserService {
  

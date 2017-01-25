@@ -1,4 +1,4 @@
-package com.jobboard.response.model;
+package com.jobboard.model;
 
 public class Response {
 

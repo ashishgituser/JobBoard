@@ -1,5 +1,6 @@
-package com.jobboard.model;
+package com.jobboard.entity;
  
+import java.util.Date;
 import java.util.HashSet;
 
 import java.util.Set;
@@ -27,18 +28,15 @@ public class User {
      
     @Column(name="PASSWORD", nullable=false)
     private String password;
-         
-    @Column(name="FIRST_NAME", nullable=false)
-    private String firstName;
- 
-    @Column(name="LAST_NAME", nullable=false)
-    private String lastName;
- 
-    @Column(name="EMAIL", nullable=false)
-    private String email;
  
     @Column(name="STATE", nullable=false)
-    private String state=State.ACTIVE.getState();
+    private String state=UserState.ACTIVE.getState();
+    
+    @Column(name="DATE_CREATED")
+    private Date dateCreated = new Date();
+    
+    @Column(name="LAST_LOGIN")
+    private Date lastLogin = new Date();
  
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "APP_USER_USER_PROFILE", 
@@ -70,30 +68,6 @@ public class User {
         this.password = password;
     }
  
-    public String getFirstName() {
-        return firstName;
-    }
- 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
- 
-    public String getLastName() {
-        return lastName;
-    }
- 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
- 
-    public String getEmail() {
-        return email;
-    }
- 
-    public void setEmail(String email) {
-        this.email = email;
-    }
- 
     public String getState() {
         return state;
     }
@@ -108,7 +82,23 @@ public class User {
  
     public void setUserProfiles(Set<UserProfile> userProfiles) {
         this.userProfiles = userProfiles;
-    }
+    }    
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public Date getLastLogin() {
+		return lastLogin;
+	}
+
+	public void setLastLogin(Date lastLogin) {
+		this.lastLogin = lastLogin;
+	}
  
     @Override
     public int hashCode() {
@@ -140,10 +130,7 @@ public class User {
  
     @Override
     public String toString() {
-        return "User [id=" + id + ", ssoId=" + ssoId + ", password=" + password
-                + ", firstName=" + firstName + ", lastName=" + lastName
-                + ", email=" + email + ", state=" + state + ", userProfiles=" + userProfiles +"]";
-    }
- 
-     
+        return "User [id=" + id + ", ssoId=" + ssoId
+                + ", state=" + state + ", userProfiles=" + userProfiles +"]";
+    } 
 }

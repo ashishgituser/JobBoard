@@ -1,8 +1,9 @@
 package com.jobboard.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jobboard.response.model.Error;
-import com.jobboard.response.model.Response;
+import com.jobboard.model.Error;
+import com.jobboard.model.Response;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;

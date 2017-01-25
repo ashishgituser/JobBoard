@@ -11,7 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import com.jobboard.model.User;
+import com.jobboard.entity.User;
 import com.jobboard.service.UserService;
 import com.jobboard.utils.SecurityUtils;
 

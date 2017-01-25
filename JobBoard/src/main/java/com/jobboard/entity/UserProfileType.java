@@ -1,4 +1,4 @@
-package com.jobboard.model;
+package com.jobboard.entity;
  
 public enum UserProfileType {
     USER("USER"),

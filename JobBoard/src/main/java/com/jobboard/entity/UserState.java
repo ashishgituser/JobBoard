@@ -1,6 +1,6 @@
-package com.jobboard.model;
+package com.jobboard.entity;
  
-public enum State {
+public enum UserState {
  
     ACTIVE("Active"),
     INACTIVE("Inactive"),
@@ -9,7 +9,7 @@ public enum State {
      
     private String state;
      
-    private State(final String state){
+    private UserState(final String state){
         this.state = state;
     }
      
