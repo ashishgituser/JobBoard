@@ -29,7 +29,7 @@ public class HibernateConfiguration {
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean factory = new LocalSessionFactoryBean();
 		factory.setDataSource(dataSource());
-		factory.setPackagesToScan(new String[] {"com.jobboard.model"});
+		factory.setPackagesToScan(new String[] {"com.jobboard.entity"});
 		factory.setHibernateProperties(hibernateProperties());
 		return factory;
 	}
