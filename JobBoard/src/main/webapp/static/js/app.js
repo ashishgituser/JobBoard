@@ -1,1 +1,0 @@
-var jbApp = angular.module('jbApp', [ 'ngResource', 'ngRoute','http-auth-interceptor' ]);
