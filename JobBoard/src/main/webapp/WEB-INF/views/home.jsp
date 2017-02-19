@@ -8,7 +8,7 @@
      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
      <link href="<c:url value='/static/lib/bootstrap/css/bootstrap.css' />" rel="stylesheet"></link>
      <link href="<c:url value='/static/css/index.css' />" rel="stylesheet"></link>
-     <title>Login</title>
+     <title>DashBoard</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 			<div class="col-md-3 col-clearfix">
 				<div class="container-fluid">
 				    <div class="navbar-header">
-				    	<div class="brand-name">ADMINBSB - MATERIAL</div>
+				    	<div class="brand-name">Company</div>
 				    </div>					
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 			<div class="left-sidebar">
 				<div class="user-info-panel">
 					<div class="user-name">John Doe</div>
-					<div class="email">ashish.chaudhary008@gmail.com</div>
+					<div class="email">ashish.chaudharyxyz@gmail.com</div>
 					<h3>
 						<button class="btn btn-sm btn-success">Messages</button>
 						<button class="btn btn-sm btn-success">Status</button>
@@ -164,7 +164,7 @@
 				
 				<div class="legal">
 					<div class="copyright">
-                    	© 2016 <a href="javascript:void(0);">AdminBSB - Material</a>
+                    	© 2017 <a href="javascript:void(0);">Company - Material</a>
                     </div>
 				</div>
 			</div>
